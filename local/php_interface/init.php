@@ -15,32 +15,32 @@ ini_set(
 $url = "https://lenta.ru/parts/news/";
 $keywords1 = ["Макдональдс", "McDonalds", "Mc Donalds", "McDonald's", "Mc Donald's"];
 $keywords2 = ["Россия", "Европа"];
+$keywords3 = ["Путин", "Вучич"];
 
 $newsArray = getLinksAndTitles($url, 10, $keywords2);
-
-dd($newsArray);
-
+//dd($newsArray);
 
 $newsInfoArray = [];
 
+$dom = new Dom();
 foreach ($newsArray as $title => $link) {
-    $newsInfoArray[] = collectDataFromPage($title, $link);
+    $newsInfoArray[] = collectDataFromPage($dom, $title, $link);
 }
+dd($newsInfoArray);
 
 
 
 
 
-function collectDataFromPage($title, $url): NewsClass {
-    $dom = new Dom();
+function collectDataFromPage($dom, $title, $url): NewsClass {
     $dom->loadFromUrl($url);
-
+    sleep(0);
     $shortDescription = trim($dom->getElementsByClass("topic-body__title-yandex")->toArray()[0]);
     $picture = $dom->getElementsByClass("picture__image")->getAttribute("src");
-    $detailText = implode("", $dom->getElementsByClass("topic-body__content-text")->toArray());
-
-    $News = new NewsClass($title, $shortDescription, $picture, $detailText, $url);
-
+    $detailArticles = $dom->getElementsByClass("topic-body__content-text")->toArray();
+    $detailText = implode("", $detailArticles);
+    $detailTextWithoutLinks = strip_tags($detailText);
+    $News = new NewsClass($title, $shortDescription, $picture, $detailTextWithoutLinks, $url);
     return $News;
 }
 
@@ -110,4 +110,3 @@ function dd($value): void
     var_export($value);
     echo "</pre>";
 }
-
