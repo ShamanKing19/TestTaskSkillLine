@@ -10,11 +10,13 @@ class Parser
     public array $keywords2 = ["Россия", "Европа"];
     public array $keywords3 = ["Путин", "Вучич"];
     public array $keywords4 = ["Россия"];
+    private int $numberOfNews;
 
     public string $url = "https://lenta.ru/parts/news/";
 
-    public function __construct()
+    public function __construct($numberOfNews)
     {
+        $this->numberOfNews = $numberOfNews;
         set_time_limit(60);
         /*
         ini_set(
@@ -25,7 +27,7 @@ class Parser
 
 
     public function GetNews(): array{
-        $newsArray = $this->getLinksAndTitles($this->url, 5, $this->keywords4);
+        $newsArray = $this->getLinksAndTitles($this->url, $this->numberOfNews, $this->keywords2);
 
         $newsInfoArray = [];
 
