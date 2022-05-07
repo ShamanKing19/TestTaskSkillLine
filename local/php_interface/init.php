@@ -41,7 +41,6 @@ function parseInfo()
             }
         }
     }
-
     return "parseInfo();";
 }
 
