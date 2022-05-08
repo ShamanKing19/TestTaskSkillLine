@@ -4,28 +4,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php
-    global $APPLICATION, $SITE_TEMPLATE_PATH;
-    $APPLICATION->ShowHead();
-    ?>
+    <?php global $APPLICATION, $SITE_TEMPLATE_PATH; ?>
+
 <!--    <title>--><?php //$APPLICATION->ShowTitle(); ?><!--</title>-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <?php
-        Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/styles.css');
-        Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/scripts.js');
-        Asset::getInstance()->addString('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js>"');
-        Asset::getInstance()->addString('<link href="https://cdn.startbootstrap.com/sb-forms-latest.js>"');
-        Asset::getInstance()->addString('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">');
-        Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css>"');
-        Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css>"');
-        Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">');
-        ?>
+<?php
+       Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/styles.css');
+       Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/scripts.js');
+       Asset::getInstance()->addString('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js>"');
+       Asset::getInstance()->addString('<link href="https://cdn.startbootstrap.com/sb-forms-latest.js>"');
+       Asset::getInstance()->addString('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">');
+       Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css>"');
+       Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css>"');
+       Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">');
+       ?>
+    <?php $APPLICATION->ShowHead(); ?>
 </head>
+
+<body id="page-top">
 <div id="panel">
     <?php $APPLICATION->ShowPanel(); ?>
 </div>
-<body id="page-top">
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">

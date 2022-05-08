@@ -1,7 +1,9 @@
 <?php
-include "NewsClass.php";
+//include "NewsClass.php";
 use PHPHtmlParser\Dom;
 
+// 07.05 работал, 08.05 сломался
+// Этот парсер проходится по основоной ленте новостей и ищет ключевые слова в заголовке (выводит новости только с сайта lenta.ru)
 class Parser
 {
     //private $userAgentOption = "User-Agent:    Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6\r\n";
@@ -18,11 +20,11 @@ class Parser
     {
         $this->numberOfNews = $numberOfNews;
         set_time_limit(60);
-        /*
+
         ini_set(
             'user_agent',
-            'Mozilla/5.0 (Windows; U; Windows NT 6.0; en-GB; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3'
-        );*/
+            'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/605.1.15 (KHTML, like Gecko)'
+        );
     }
 
 

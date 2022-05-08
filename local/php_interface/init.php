@@ -1,13 +1,14 @@
 <?
 require "vendor/autoload.php";
-include "local/php_interface/Parser.php";
+include "local/php_interface/McDonaldsParser.php";
 CModule::IncludeModule("iblock");
 
 
 function parseInfo()
 {
-    $parser = new Parser(10);
+    $parser = new McDonaldsParser(10);
     $allNewsArray = $parser->GetNews();
+
     $element = new CIBlockElement;
 
     if (count($allNewsArray) != 0) {
@@ -31,16 +32,19 @@ function parseInfo()
                 'ACTIVE' => 'Y', // активен
                 'PREVIEW_TEXT' => $news->shortDescription,
                 'DETAIL_TEXT' => $news->detailText,
+                'PREVIEW_PICTURE' => CFile::MakeFileArray($news->picture),
                 'DETAIL_PICTURE' => CFile::MakeFileArray($news->picture)
             );
-
+    /*
             if ($PRODUCT_ID = $element->Add($arLoadProductArray)) {
                 echo 'New ID: ' . $PRODUCT_ID;
             } else {
                 echo 'Error: ' . $element->LAST_ERROR;
             }
+    */
         }
     }
+
     return "parseInfo();";
 }
 
