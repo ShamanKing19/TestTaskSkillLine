@@ -33,7 +33,9 @@ function parseInfo()
                 'PREVIEW_TEXT' => $news->shortDescription,
                 'DETAIL_TEXT' => $news->detailText,
                 'PREVIEW_PICTURE' => CFile::MakeFileArray($news->picture),
-                'DETAIL_PICTURE' => CFile::MakeFileArray($news->picture)
+                'DETAIL_PICTURE' => CFile::MakeFileArray($news->picture),
+                'CODE' => Cutil::translit(strtolower($news->title), "ru",
+                array("replace_space" => "-", "replace_other" => "-"))
             );
     /*
             if ($PRODUCT_ID = $element->Add($arLoadProductArray)) {

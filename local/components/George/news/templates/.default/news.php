@@ -53,7 +53,7 @@ $this->setFrameMode(true);
 <br />
 <?endif?>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list",
+	"George:news.list.news",
 	"",
 	Array(
 		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
