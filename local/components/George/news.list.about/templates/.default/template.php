@@ -32,7 +32,7 @@ $this->setFrameMode(true);
                 <div class="timeline-image">
                     <? if ($arParams["DISPLAY_PICTURE"] != "N" && is_array($arItem["PREVIEW_PICTURE"])): ?>
                         <? if (!$arParams["HIDE_LINK_WHEN_NO_DETAIL"] || ($arItem["DETAIL_TEXT"] && $arResult["USER_HAVE_ACCESS"])): ?>
-                            <a href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
+                            <!-- <a href="--><?//= $arItem["DETAIL_PAGE_URL"] ?><!--">-->
                                 <img
                                         class="rounded-circle img-fluid"
                                         border="0"
@@ -42,7 +42,7 @@ $this->setFrameMode(true);
                                         alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>"
                                         title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>"
                                 />
-                            </a>
+<!--                            </a>-->
                         <? else: ?>
                             <img
                                     class="preview_picture"

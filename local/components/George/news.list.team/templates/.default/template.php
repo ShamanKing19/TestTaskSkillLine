@@ -32,7 +32,7 @@ $this->setFrameMode(true);
                 <div class="team-member" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
                     <? if ($arParams["DISPLAY_PICTURE"] != "N" && is_array($arItem["PREVIEW_PICTURE"])): ?>
                         <? if (!$arParams["HIDE_LINK_WHEN_NO_DETAIL"] || ($arItem["DETAIL_TEXT"] && $arResult["USER_HAVE_ACCESS"])): ?>
-                            <a href="<?= $arItem["DETAIL_PAGE_URL"] ?>">
+<!--                            <a href="--><?//= $arItem["DETAIL_PAGE_URL"] ?><!--">-->
                                 <img
                                         class="mx-auto rounded-circle"
                                         border="0"
@@ -42,7 +42,7 @@ $this->setFrameMode(true);
                                         alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>"
                                         title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>"
                                 />
-                            </a>
+<!--                            </a>-->
                         <? else: ?>
                             <img
                                     class="mx-auto rounded-circle"
@@ -59,7 +59,7 @@ $this->setFrameMode(true);
                     <h4>
                         <? if ($arParams["DISPLAY_NAME"] != "N" && $arItem["NAME"]): ?>
                             <? if (!$arParams["HIDE_LINK_WHEN_NO_DETAIL"] || ($arItem["DETAIL_TEXT"] && $arResult["USER_HAVE_ACCESS"])): ?>
-                                <a href="<? echo $arItem["DETAIL_PAGE_URL"] ?>"><b><? echo $arItem["NAME"] ?></b></a>
+                                <!--<a href="<? echo $arItem["DETAIL_PAGE_URL"] ?>"> --><b><? echo $arItem["NAME"] ?></b><!--</a>-->
                                 <br/>
                             <? else: ?>
                                 <b><? echo $arItem["NAME"] ?></b><br/>
