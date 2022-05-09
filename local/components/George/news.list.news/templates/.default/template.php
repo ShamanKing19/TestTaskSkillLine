@@ -13,7 +13,7 @@
 $this->setFrameMode(true);
 ?>
 
-<section class="page-section bg-light" id="portfolio">
+<section class="page-section bg-light" id="news">
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">Новости</h2>
@@ -49,21 +49,18 @@ $this->setFrameMode(true);
                                     </a>
                                 <? else: ?>
                                     <img
-                                            class="preview_picture"
+                                            class="mx-auto d-block"
                                             border="0"
                                             src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>"
                                             width="<?= $arItem["PREVIEW_PICTURE"]["WIDTH"] ?>"
                                             height="<?= $arItem["PREVIEW_PICTURE"]["HEIGHT"] ?>"
                                             alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>"
                                             title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>"
-                                            style="float:left"
                                     />
                                 <? endif; ?>
                             <? endif ?>
                         </a>
-                        <? if ($arParams["DISPLAY_PICTURE"] != "N" && is_array($arItem["PREVIEW_PICTURE"])): ?>
-                            <div style="clear:both"></div>
-                        <? endif ?>
+
 
                         <!-- Информация -->
                         <div class="portfolio-caption">
